@@ -209,6 +209,8 @@ def _impl(
     # Generate the zipped filesystem layer, and its sha256 (aka blob sum)
     zipped_layer, blob_sum = zip_layer(ctx, unzipped_layer)
 
+    print("Could push blob_sum {} now".format(blob_sum))
+
     # Returns constituent parts of the Container layer as provider:
     # - in container_image rule, we need to use all the following information,
     #   e.g. zipped_layer etc., to assemble the complete container image.
